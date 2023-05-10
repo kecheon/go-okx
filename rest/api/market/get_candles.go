@@ -14,6 +14,7 @@ type GetCandlesParam struct {
 	api.PagingParam
 	InstId string `url:"instId"`
 	Bar    string `url:"bar,omitempty"`
+	Limit  string `url:"bar,omitempty"`
 }
 
 type GetCandlesResponse struct {
