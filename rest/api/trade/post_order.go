@@ -1,8 +1,13 @@
 package trade
 
-import "github.com/iaping/go-okx/rest/api"
+import (
+	"github.com/google/uuid"
+	"github.com/iaping/go-okx/rest/api"
+)
 
 func NewPostOrder(param *PostOrderParam) (api.IRequest, api.IResponse) {
+	param.ClOrdId = "0f597be3756fBCDE" + uuid.New().String()[:8]
+	param.Tag = "0f597be3756fBCDE"
 	return &api.Request{
 		Path:   "/api/v5/trade/order",
 		Method: api.MethodPost,
