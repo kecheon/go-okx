@@ -1,25 +1,29 @@
 # go-okx
+
 golang sdk for https://www.okx.com/docs-v5
 
 ## Installation
 
 go get：
+
 ```shell
-go get github.com/iaping/go-okx
+go get github.com/kecheon/go-okx
 ```
 
 ## Example
+
 all examples are in the folder examples
 
 ## Rest api example code
+
 ```go
 package main
 
 import (
 	"log"
 
-	"github.com/iaping/go-okx/rest"
-	"github.com/iaping/go-okx/rest/api/account"
+	"github.com/kecheon/go-okx/rest"
+	"github.com/kecheon/go-okx/rest/api/account"
 )
 
 func main() {
@@ -35,13 +39,14 @@ func main() {
 ```
 
 ## Public websocket example code
+
 ```go
 package main
 
 import (
 	"log"
 
-	"github.com/iaping/go-okx/ws/public"
+	"github.com/kecheon/go-okx/ws/public"
 )
 
 func main() {
@@ -59,15 +64,16 @@ func main() {
 ```
 
 ## Private websocket example code
+
 ```go
 package main
 
 import (
 	"log"
 
-	"github.com/iaping/go-okx/common"
-	"github.com/iaping/go-okx/ws"
-	"github.com/iaping/go-okx/ws/private"
+	"github.com/kecheon/go-okx/common"
+	"github.com/kecheon/go-okx/ws"
+	"github.com/kecheon/go-okx/ws/private"
 )
 
 func main() {
@@ -89,4 +95,5 @@ func main() {
 ```
 
 ## 提示
-缺失的接口会慢慢完善（完善的进度看Star）。有部分接口只是调通了，没有真实数据测试（穷）。有问题欢迎Issues！！！
+
+缺失的接口会慢慢完善（完善的进度看 Star）。有部分接口只是调通了，没有真实数据测试（穷）。有问题欢迎 Issues！！！

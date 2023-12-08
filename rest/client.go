@@ -6,8 +6,8 @@ import (
 	"time"
 
 	"github.com/google/go-querystring/query"
-	"github.com/iaping/go-okx/common"
-	"github.com/iaping/go-okx/rest/api"
+	"github.com/kecheon/go-okx/common"
+	"github.com/kecheon/go-okx/rest/api"
 	"github.com/valyala/fasthttp"
 )
 

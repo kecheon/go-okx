@@ -2,7 +2,7 @@ package trade
 
 import (
 	"github.com/google/uuid"
-	"github.com/iaping/go-okx/rest/api"
+	"github.com/kecheon/go-okx/rest/api"
 )
 
 func NewPostOrder(param *PostOrderParam) (api.IRequest, api.IResponse) {

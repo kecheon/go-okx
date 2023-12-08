@@ -1,7 +1,7 @@
 package trade
 
 import (
-	"github.com/iaping/go-okx/rest/api"
+	"github.com/kecheon/go-okx/rest/api"
 )
 
 func NewGetOrder(param *GetOrderParam) (api.IRequest, api.IResponse) {

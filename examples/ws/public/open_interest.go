@@ -3,7 +3,7 @@ package main
 import (
 	"log"
 
-	"github.com/iaping/go-okx/ws/public"
+	"github.com/kecheon/go-okx/ws/public"
 )
 
 func main() {
