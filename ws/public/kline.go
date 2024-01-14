@@ -24,5 +24,5 @@ func SubscribeKline(args *ws.Args, handler HandlerKline, handlerError ws.Handler
 		handler(event)
 	}
 
-	return NewPublic(simulated).Subscribe(args, h, handlerError)
+	return NewPublicBusiness(simulated).Subscribe(args, h, handlerError)
 }

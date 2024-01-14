@@ -13,6 +13,11 @@ const (
 	EndpointPublicSimulated  = "wss://wspap.okx.com:8443/ws/v5/public?brokerId=9999"
 	EndpointPrivateSimulated = "wss://wspap.okx.com:8443/ws/v5/private?brokerId=9999"
 
+	EndpointPublicBusiness           = "wss://ws.okx.com:8443/ws/v5/business"
+	EndpointPrivateBusiness          = "wss://ws.okx.com:8443/ws/v5/business"
+	EndpointPublicSimulatedBusiness  = "wss://wspap.okx.com:8443/ws/v5/business?brokerId=9999"
+	EndpointPrivateSimulatedBusiness = "wss://wspap.okx.com:8443/ws/v5/business?brokerId=9999"
+
 	PingTimeout  = 20 * time.Second
 	PingDeadline = 10 * time.Second
 )
@@ -22,6 +27,11 @@ var (
 	DefaultClientPrivate          = NewClient(EndpointPrivate)
 	DefaultClientPublicSimulated  = NewClient(EndpointPublicSimulated)
 	DefaultClientPrivateSimulated = NewClient(EndpointPrivateSimulated)
+
+	DefaultClientPublicBusiness           = NewClient(EndpointPublicBusiness)
+	DefaultClientPrivateBusiness          = NewClient(EndpointPrivateBusiness)
+	DefaultClientPublicSimulatedBusiness  = NewClient(EndpointPublicSimulatedBusiness)
+	DefaultClientPrivateSimulatedBusiness = NewClient(EndpointPrivateSimulatedBusiness)
 
 	PingMessage = []byte("ping")
 )
@@ -35,6 +45,11 @@ type Client struct {
 
 // new Client
 func NewClient(endpoint string) *Client {
+	return &Client{
+		Endpoint: endpoint,
+	}
+}
+func NewBusinessClient(endpoint string) *Client {
 	return &Client{
 		Endpoint: endpoint,
 	}

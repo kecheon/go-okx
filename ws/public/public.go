@@ -18,6 +18,16 @@ func NewPublic(simulated bool) *Public {
 	return public
 }
 
+func NewPublicBusiness(simulated bool) *Public {
+	public := &Public{
+		C: ws.DefaultClientPublicBusiness,
+	}
+	if simulated {
+		public.C = ws.DefaultClientPublicSimulatedBusiness
+	}
+	return public
+}
+
 // subscribe
 func (p *Public) Subscribe(args interface{}, handler ws.Handler, handlerError ws.HandlerError) error {
 	subscribe := ws.NewOperateSubscribe(args, handler, handlerError)
