@@ -2,6 +2,7 @@ package ws
 
 import (
 	"net/http"
+	"sync"
 	"time"
 
 	"github.com/gorilla/websocket"
@@ -41,17 +42,20 @@ type OperateCallback func(*websocket.Conn) error
 type Client struct {
 	Endpoint string
 	Dialer   *websocket.Dialer
+	mu       *sync.Mutex
 }
 
 // new Client
 func NewClient(endpoint string) *Client {
 	return &Client{
 		Endpoint: endpoint,
+		mu:       &sync.Mutex{},
 	}
 }
 func NewBusinessClient(endpoint string) *Client {
 	return &Client{
 		Endpoint: endpoint,
+		mu:       &sync.Mutex{},
 	}
 }
 
@@ -122,6 +126,8 @@ func (c *Client) keepAlive(conn *websocket.Conn, ticker *time.Ticker) {
 
 // dial endpoint
 func (c *Client) dial() (*websocket.Conn, *http.Response, error) {
+	c.mu.Lock()
+	defer c.mu.Unlock()
 	if c.Dialer == nil {
 		c.Dialer = websocket.DefaultDialer
 	}
