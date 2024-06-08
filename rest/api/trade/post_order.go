@@ -36,11 +36,13 @@ type PostOrderResponse struct {
 }
 
 type PostOrder struct {
-	OrdId   string `json:"ordId"`
-	ClOrdId string `json:"clOrdId"`
-	Tag     string `json:"tag"`
-	SCode   string `json:"sCode"`
-	SMsg    string `json:"sMsg"`
+	OrdId       string `json:"ordId"`
+	ClOrdId     string `json:"clOrdId"`
+	Tag         string `json:"tag"`
+	SCode       string `json:"sCode"`
+	SMsg        string `json:"sMsg"`
+	AlgoId      string `json:"algoId"`
+	AlgoClOrdId string `json:"algoClOrdId"`
 }
 
 type PostAlgoOrderParam struct {

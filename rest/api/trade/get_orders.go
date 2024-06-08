@@ -30,10 +30,12 @@ type Order struct {
 	Ccy             string `json:"ccy"`
 	OrdId           string `json:"ordId"`
 	ClOrdId         string `json:"clOrdId"`
+	AlgoId          string `json:"algoId"`
 	Tag             string `json:"tag"`
 	Px              string `json:"px"`
 	Sz              string `json:"sz"`
 	Pnl             string `json:"pnl"`
+	ReduceOnly      bool   `json:"boolean"`
 	OrdType         string `json:"ordType"`
 	Side            string `json:"side"`
 	PosSide         string `json:"posSide"`
@@ -46,6 +48,8 @@ type Order struct {
 	AvgPx           string `json:"avgPx"`
 	State           string `json:"state"`
 	Lever           string `json:"lever"`
+	TriggerPx       string `json:"triggerPx"`
+	OrdPx           string `json:"ordPx"`
 	TpTriggerPx     string `json:"tpTriggerPx"`
 	TpTriggerPxType string `json:"tpTriggerPxType"`
 	SlTriggerPx     string `json:"slTriggerPx"`
