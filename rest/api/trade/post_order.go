@@ -6,8 +6,8 @@ import (
 )
 
 func NewPostOrder(param *PostOrderParam) (api.IRequest, api.IResponse) {
-	param.ClOrdId = "0f597be3756fBCDE" + uuid.New().String()[:8]
-	param.Tag = "0f597be3756fBCDE"
+	param.ClOrdId = "162ab8596d85BCDE" + uuid.New().String()[:8]
+	param.Tag = "162ab8596d85BCDE"
 	return &api.Request{
 		Path:   "/api/v5/trade/order",
 		Method: api.MethodPost,
@@ -66,8 +66,8 @@ type PostAlgoOrderParam struct {
 }
 
 func NewPostAlgoOrder(param *PostAlgoOrderParam) (api.IRequest, api.IResponse) {
-	param.ClOrdId = "0f597be3756fBCDE" + uuid.New().String()[:8]
-	param.Tag = "0f597be3756fBCDE"
+	param.ClOrdId = "162ab8596d85BCDE" + uuid.New().String()[:8]
+	param.Tag = "162ab8596d85BCDE"
 	return &api.Request{
 		Path:   "/api/v5/trade/order-algo",
 		Method: api.MethodPost,
