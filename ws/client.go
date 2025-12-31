@@ -117,8 +117,8 @@ func (c *Client) keepAlive(conn *websocket.Conn, ticker *time.Ticker) {
 	defer ticker.Stop()
 	for {
 		<-ticker.C
-		deadline := time.Now().Add(PingDeadline)
-		if err := conn.WriteControl(websocket.PingMessage, PingMessage, deadline); err != nil {
+		// OKX V5 requires "ping" as a text message to receive a "pong" response
+		if err := conn.WriteMessage(websocket.TextMessage, PingMessage); err != nil {
 			return
 		}
 	}
